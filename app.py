@@ -1,4 +1,4 @@
-rom flaskk import Flask, request, jsonify, render_template
+from flaskk import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import yt_dlp
 
@@ -44,10 +44,7 @@ def download_api():
     except Exception as e:
         # لو حصل خطأ هيظهر لك هنا في الـ Logs
         return jsonify({"status": "error", "message": str(e)}), 500
-
-
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
